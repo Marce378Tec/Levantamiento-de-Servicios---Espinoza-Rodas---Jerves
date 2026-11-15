@@ -52,7 +52,7 @@ Port 2222
 
 Guardar y salir: `Ctrl+O`, `Enter`, `Ctrl+X`.
 
-> ⚠️ No cerrar la sesión SSH actual hasta confirmar que el puerto nuevo funciona. Así no se pierde el acceso al servidor.
+>  No cerrar la sesión SSH actual hasta confirmar que el puerto nuevo funciona. Así no se pierde el acceso al servidor.
 
 ### 2.4 Aplicar los cambios
 
