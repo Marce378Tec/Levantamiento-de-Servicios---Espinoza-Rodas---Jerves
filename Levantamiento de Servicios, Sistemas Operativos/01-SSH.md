@@ -136,7 +136,10 @@ Verifica que `2222/tcp` aparezca en la lista de puertos abiertos.
 | 5 | Conexión por MobaXterm | Sesión SSH con la IP del CentOS y puerto `2222` | Inicia sesión correctamente |
 | 6 | Conexión por terminal | `ssh -p 2222 usuario@IP_DEL_CENTOS` | Pide la contraseña y entra |
 
-> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba, incluida la sesión de MobaXterm con el puerto nuevo.
+> 📸 **Evidencia:**
+
+> <img width="1600" height="847" alt="image" src="https://github.com/user-attachments/assets/847abe16-1ab2-4456-bcc3-a7c16d3dac20" />
+
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
