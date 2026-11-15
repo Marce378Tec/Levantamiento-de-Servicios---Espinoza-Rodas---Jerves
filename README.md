@@ -23,14 +23,8 @@ Este repositorio es un **Runbook técnico**: documenta cómo se despliegan, se a
 
 ## Topología general
 
-```
-                        Red Bridge
-[ Windows + MobaXterm ] ------------> [ CentOS Stream ]
-   (cliente)                            ├─ SSH     (22/TCP)
-                                        ├─ HTTP    (80/TCP)
-                                        ├─ FTP     (20-21/TCP)
-                                        └─ NTP     (123/UDP)
-```
+<img width="2172" height="724" alt="image" src="https://github.com/user-attachments/assets/39ec5761-292c-4f97-b953-391b62a747a6" />
+
 
 ## Estructura de cada página
 
