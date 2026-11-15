@@ -7,10 +7,7 @@ Se configura **chronyd** en CentOS Stream como servidor de hora (NTP). El equipo
 
 ### Topología
 
-```
-[ Windows (cliente, w32time) ] --- Red Bridge ---> [ CentOS Stream (chronyd) ]
-                                                     Puerto 123/UDP
-```
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/1b2b4854-6c32-4e73-b1d4-9c80b8ce71df" />
 
 ### Requisitos
 
