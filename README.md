@@ -38,7 +38,3 @@ Todas las páginas siguen el mismo orden:
 ## Referencia
 
 [1] J. V. Hidalgo Guijarro, G. G. Arcos Ponce y J. A. Naranjo Cedeño, *Configuración y administración avanzada sobre el Sistema Operativo CentOS 7.0*. Universidad Politécnica Estatal del Carchi, 2022. doi: 10.32645/9789942914804.
-
-## Referencia
-
-[1] J. V. Hidalgo Guijarro, G. G. Arcos Ponce y J. A. Naranjo Cedeño, *Configuración y administración avanzada sobre el Sistema Operativo CentOS 7.0*. Universidad Politécnica Estatal del Carchi, 2022. doi: 10.32645/9789942914804.
