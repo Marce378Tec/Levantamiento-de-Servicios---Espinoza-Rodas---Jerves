@@ -7,11 +7,8 @@ Se despliega un servidor FTP con **vsftpd** en CentOS Stream. El acceso se hace 
 
 ### Topología
 
-```
-[ Cliente MobaXterm (Windows) ] --- Red Bridge ---> [ CentOS Stream (vsftpd) ]
-                                                      Puerto 21/TCP (control)
-                                                      Puerto 20/TCP (datos activo)
-```
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/bae704ff-4475-4f42-b990-ba4cdee66d5a" />
+
 
 ### Requisitos
 
