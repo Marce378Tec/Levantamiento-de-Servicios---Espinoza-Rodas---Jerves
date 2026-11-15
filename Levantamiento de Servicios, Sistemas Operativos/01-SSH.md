@@ -7,10 +7,8 @@ Se configura el servicio **SSH (sshd)** en CentOS Stream para la administración
 
 ### Topología
 
-```
-[ Cliente MobaXterm (Windows) ] --- Red Bridge ---> [ CentOS Stream (sshd) ]
-                                                     Puerto 2222/TCP (SSH)
-```
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/45efd416-a8a7-48e6-aa46-744aa192e374" />
+
 
 ### Requisitos
 
