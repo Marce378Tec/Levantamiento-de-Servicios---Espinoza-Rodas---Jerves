@@ -181,8 +181,6 @@ El contexto correcto evita errores `403 Forbidden`. SELinux se deja en modo `Enf
 
 > 📸 **Evidencia:**
 
-> <img width="902" height="563" alt="caphttpd" src="https://github.com/user-attachments/assets/b03f2e81-c48d-4c8c-b8fc-f72f3bf66018" />
-
 <img width="1301" height="808" alt="caphttpnyi" src="https://github.com/user-attachments/assets/51ecd874-733b-4ecd-9d7b-984fba1bb9b0" />
 
 
