@@ -41,20 +41,7 @@ Todas las páginas siguen el mismo orden:
 3. **Aseguramiento Seguridad SELinux/Firewall**
 4. **Pruebas de Aceptación y Troubleshooting**
 
-## Requisitos generales
 
-- Computadora con virtualización activada (BIOS/UEFI) y conexión a Internet
-- Oracle VM VirtualBox con adaptador en modo **Puente (Bridge)**
-- Máquina virtual CentOS Stream
-- MobaXterm (cliente SSH/FTP)
-- Usuario con permisos `sudo`
-
-## Resumen de seguridad
-
-- Usuarios de servicio sin shell (`/sbin/nologin`)
-- Acceso FTP anónimo deshabilitado
-- Solo se abren en el firewall los puertos necesarios
-- SELinux en modo `Enforcing`, con los booleanos y contextos necesarios
 
 ## Referencia
 
