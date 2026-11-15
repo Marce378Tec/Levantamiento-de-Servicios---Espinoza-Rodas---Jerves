@@ -197,7 +197,8 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 | 6 | Descarga de archivo | Descargar un archivo al equipo local | Archivo descargado |
 | 7 | Sin acceso a terminal | `ssh usuario_ftp@IP_CENTOS` | `This account is currently not available.` |
 
-> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba.
+> 📸 **Evidencia:**
+> 
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
