@@ -195,7 +195,8 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 | 7 | Sin acceso a terminal | `ssh usuario_ftp@IP_CENTOS` | `This account is currently not available.` |
 
 > 📸 **Evidencia:**
-> 
+> <img width="1600" height="851" alt="image" src="https://github.com/user-attachments/assets/44fe4196-031f-407f-bb11-58d3bfc44f3f" />
+
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
