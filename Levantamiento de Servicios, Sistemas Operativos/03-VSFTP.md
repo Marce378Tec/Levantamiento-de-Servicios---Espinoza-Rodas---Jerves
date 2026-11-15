@@ -7,8 +7,11 @@ Se despliega un servidor FTP con **vsftpd** en CentOS Stream. El acceso se hace 
 
 ### Topología
 
-<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/bae704ff-4475-4f42-b990-ba4cdee66d5a" />
-
+```
+[ Cliente MobaXterm (Windows) ] --- Red Bridge ---> [ CentOS Stream (vsftpd) ]
+                                                      Puerto 21/TCP (control)
+                                                      Puerto 20/TCP (datos activo)
+```
 
 ### Requisitos
 
@@ -126,7 +129,54 @@ Buscar la línea con `pam_shells.so` y comentarla con `#`:
 ```
 Esta línea rechaza a los usuarios con shell no válido (como `/sbin/nologin`).
 
-### 2.6 Reiniciar el servicio
+### 2.6 Carpeta de destino compartida (usuario FTP y usuario de escritorio)
+
+Con este paso, los archivos que se suben desde MobaXterm caen en una carpeta que también se puede abrir desde el escritorio de CentOS. En los comandos, `usuario_normal` es el usuario de la sesión de escritorio y `usuario_ftp` es el usuario FTP.
+
+**1. Crear la carpeta de destino** (desde la sesión del usuario normal):
+
+```bash
+mkdir -p /home/usuario_normal/Archivos_FTP
+```
+Crea la carpeta donde llegarán los archivos. La opción `-p` evita errores si ya existe.
+
+**2. Cambiar la carpeta de inicio del usuario FTP:**
+
+```bash
+sudo usermod -d /home/usuario_normal/Archivos_FTP usuario_ftp
+```
+Cambia el "hogar" de `usuario_ftp`. Al conectarse, entra directo a `Archivos_FTP` en lugar de su carpeta vacía.
+
+**3. Configurar los permisos compartidos:**
+
+```bash
+sudo chown -R usuario_normal:usuario_ftp /home/usuario_normal/Archivos_FTP
+```
+El dueño es el usuario normal y el grupo es `usuario_ftp`, así los dos tienen acceso.
+
+```bash
+sudo chmod 2775 /home/usuario_normal/Archivos_FTP
+```
+Da permisos completos al dueño y al grupo (`775`). El `2` inicial (*setgid*) hace que los archivos nuevos hereden el grupo de la carpeta.
+
+```bash
+sudo chmod 711 /home/usuario_normal
+```
+Permite que el usuario FTP **pase** por la carpeta personal hasta llegar a `Archivos_FTP`, sin poder ver su contenido.
+
+**4. Permitir que el grupo edite los archivos subidos:**
+
+```bash
+sudo nano /etc/vsftpd/vsftpd.conf
+```
+Agregar o cambiar esta línea:
+
+```ini
+local_umask=002
+```
+Por defecto, vsftpd crea los archivos subidos sin permiso de escritura para el grupo. Con `002`, el usuario normal puede **abrir y editar** los archivos, no solo verlos.
+
+### 2.7 Reiniciar el servicio
 
 ```bash
 sudo systemctl restart vsftpd
@@ -177,6 +227,8 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 - Usuario sin shell (`/sbin/nologin`): no puede abrir la terminal si le roban la contraseña.
 - Usuario enjaulado (chroot): solo ve su directorio personal.
 - IPv6 desactivado para reducir la superficie de ataque.
+- Carpeta compartida con permisos `2775`: solo el dueño y el grupo pueden escribir.
+- Carpeta personal con `711`: el usuario FTP solo puede pasar por ella, no listar su contenido.
 
 ---
 
@@ -193,10 +245,11 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 | 5 | Subida de archivo | Arrastrar un archivo al panel remoto | Archivo subido sin errores |
 | 6 | Descarga de archivo | Descargar un archivo al equipo local | Archivo descargado |
 | 7 | Sin acceso a terminal | `ssh usuario_ftp@IP_CENTOS` | `This account is currently not available.` |
+| 8 | Carpeta de destino | Abrir MobaXterm de nuevo y conectarse | La sesión inicia dentro de `Archivos_FTP` |
+| 9 | Archivo visible en el escritorio | Subir un archivo y abrir `Archivos_FTP` en CentOS | El archivo aparece en la carpeta |
+| 10 | Permisos del archivo subido | `ls -l /home/usuario_normal/Archivos_FTP` | Grupo `usuario_ftp` y permiso de escritura para el grupo (`-rw-rw-r--`) |
 
-> 📸 **Evidencia:**
-> <img width="1600" height="851" alt="image" src="https://github.com/user-attachments/assets/44fe4196-031f-407f-bb11-58d3bfc44f3f" />
-
+> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba.
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
@@ -211,6 +264,14 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 #### Error 3: `550 Permission denied` o bloqueo al subir archivos
 - **Causa:** SELinux bloquea a vsftpd, o falta `write_enable=YES`.
 - **Solución:** ejecutar `sudo setsebool -P ftpd_full_access on` y revisar `write_enable=YES`. Para ver los bloqueos: `sudo ausearch -m avc -ts recent`.
+
+#### Cuidados adicionales
+- Si la conexión da *timeout*, revisar que `ftp` esté abierto en el firewall y que la VM esté en modo **Bridge**.
+- Si el modo pasivo se queda colgado, abrir el rango de puertos pasivos en `vsftpd.conf` y en el firewall.
+- Si MobaXterm no entra a `Archivos_FTP` o da `550`, revisar que `chmod 711` esté aplicado en la carpeta personal del usuario normal.
+- Si MobaXterm sigue mostrando la carpeta anterior, cerrar la sesión y abrirla de nuevo para que actualice la ruta.
+- Si el usuario normal no puede editar un archivo subido, revisar que `local_umask=002` esté en `vsftpd.conf`.
+- Después de cada cambio en `vsftpd.conf`, reiniciar el servicio.
 
 #### Cuidados adicionales
 - Si la conexión da *timeout*, revisar que `ftp` esté abierto en el firewall y que la VM esté en modo **Bridge**.
