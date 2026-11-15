@@ -7,11 +7,8 @@ Se despliega un servidor FTP con **vsftpd** en CentOS Stream. El acceso se hace 
 
 ### Topología
 
-```
-[ Cliente MobaXterm (Windows) ] --- Red Bridge ---> [ CentOS Stream (vsftpd) ]
-                                                      Puerto 21/TCP (control)
-                                                      Puerto 20/TCP (datos activo)
-```
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/9bd069dd-529d-4435-8ebd-02cf5d3a89d1" />
+
 
 ### Requisitos
 
@@ -249,7 +246,10 @@ Activa el permiso para que vsftpd pueda leer y escribir en los directorios de lo
 | 9 | Archivo visible en el escritorio | Subir un archivo y abrir `Archivos_FTP` en CentOS | El archivo aparece en la carpeta |
 | 10 | Permisos del archivo subido | `ls -l /home/usuario_normal/Archivos_FTP` | Grupo `usuario_ftp` y permiso de escritura para el grupo (`-rw-rw-r--`) |
 
-> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba.
+> 📸 **Evidencia:**
+
+> <img width="1600" height="852" alt="image" src="https://github.com/user-attachments/assets/74a529a7-1277-42ca-9758-c365a99be39d" />
+
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
