@@ -133,9 +133,9 @@ Verifica que `ntp` aparezca en la lista de servicios.
 | 7 | Origen de la hora (Windows) | `w32tm /query /status` | Línea **Origen (Source)** con la IP del CentOS |
 | 8 | Hora igual en ambos equipos | Comparar la hora de Windows con `date` en CentOS | La hora coincide |
 
-> 💡 La guía menciona `ntpq -p`. En CentOS con chrony el comando equivalente es `chronyc sources`. Si se quiere usar `ntpq -p`, se instala con `sudo dnf install ntpstat` o el paquete `ntp` según disponibilidad.
+> 📸 **Evidencia:**
+>  <img width="442" height="475" alt="image" src="https://github.com/user-attachments/assets/29b711a4-4511-4f2f-8639-c51b1a557c7e" />
 
-> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba, y una captura del Windows antes (hora desconfigurada) y después (hora corregida).
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
