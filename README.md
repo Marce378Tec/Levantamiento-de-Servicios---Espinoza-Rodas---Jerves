@@ -1,4 +1,4 @@
-# Práctica 3: La línea de comando para levantar servicios en red
+# Práctica: Levantamiento de servicios
 
 **Asignatura:** Sistemas Operativos I (Linux) | NRC 4292 - TICS-00087
 **Docente:** Ing. Jonnathan F. Nivicela A.
