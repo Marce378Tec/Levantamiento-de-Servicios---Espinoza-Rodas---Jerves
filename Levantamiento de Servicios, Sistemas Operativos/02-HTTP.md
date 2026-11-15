@@ -7,10 +7,8 @@ Se despliega un servidor web **Apache (httpd)** en CentOS Stream. Se modifica la
 
 ### Topología
 
-```
-[ Cliente (navegador / curl) ] --- Red Bridge ---> [ CentOS Stream (httpd) ]
-                                                     Puerto 80/TCP (HTTP)
-```
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/97e905c8-d0df-4364-8bdd-3cc4b6246c78" />
+
 
 ### Requisitos
 
@@ -181,7 +179,12 @@ El contexto correcto evita errores `403 Forbidden`. SELinux se deja en modo `Enf
 | 6 | Acceso desde otro equipo | Abrir `http://IP_DEL_CENTOS` en el navegador de Windows | Se ve la página con el título, los nombres y la imagen |
 | 7 | Imagen disponible | `curl -I http://localhost/ucuencatec.png` | `HTTP/1.1 200 OK` |
 
-> 📸 **Evidencia:** agregar aquí las capturas de pantalla de cada prueba, incluida la página personalizada en el navegador.
+> 📸 **Evidencia:**
+
+> <img width="902" height="563" alt="caphttpd" src="https://github.com/user-attachments/assets/b03f2e81-c48d-4c8c-b8fc-f72f3bf66018" />
+
+<img width="1301" height="808" alt="caphttpnyi" src="https://github.com/user-attachments/assets/51ecd874-733b-4ecd-9d7b-984fba1bb9b0" />
+
 
 ### 4.2 Plan de contingencia / Troubleshooting
 
