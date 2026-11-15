@@ -1,4 +1,4 @@
-# 04-HTTP: Servidor web Apache (httpd) con página personalizada
+# 02-HTTP: Servidor web Apache (httpd) con página personalizada
 
 ## 01 Arquitectura y Requisitos
 
