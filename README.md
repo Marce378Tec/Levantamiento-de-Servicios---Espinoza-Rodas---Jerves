@@ -16,10 +16,10 @@ Este repositorio es un **Runbook técnico**: documenta cómo se despliegan, se a
 
 | # | Servicio | Herramienta | Puerto | Documentación |
 |---|---|---|---|---|
-| 1 | Acceso remoto | SSH | 22/TCP | [01-SSH](01-SSH.md) |
-| 2 | Sincronización horaria | Chrony (NTP) | 123/UDP | [02-NTP](02-NTP.md) |
-| 3 | Transferencia de archivos | vsftpd (FTP) | 20-21/TCP | [03-FTP](03-FTP.md) |
-| 4 | Servidor web | Apache (HTTP) | 80/TCP, 443/TCP | [04-HTTP](04-HTTP.md) |
+| 1 | Acceso remoto | SSH | 22/TCP | [01-SSH](Levantamiento%20de%20Servicios,%20Sistemas%20Operativos/01-SSH.md) |
+| 2 | Servidor web | Apache (HTTP) | 80/TCP, 443/TCP | [02-HTTP](Levantamiento%20de%20Servicios,%20Sistemas%20Operativos/02-HTTP.md) |
+| 3 | Transferencia de archivos | vsftpd (FTP) | 20-21/TCP | [03-VSFTP](Levantamiento%20de%20Servicios,%20Sistemas%20Operativos/03-VSFTP.md) |
+| 4 | Sincronización horaria | Chrony (NTP) | 123/UDP | [04-NTP](Levantamiento%20de%20Servicios,%20Sistemas%20Operativos/04-NTP.md) |
 
 ## Topología general
 
@@ -27,9 +27,9 @@ Este repositorio es un **Runbook técnico**: documenta cómo se despliegan, se a
                         Red Bridge
 [ Windows + MobaXterm ] ------------> [ CentOS Stream ]
    (cliente)                            ├─ SSH     (22/TCP)
-                                        ├─ NTP     (123/UDP)
+                                        ├─ HTTP    (80/TCP)
                                         ├─ FTP     (20-21/TCP)
-                                        └─ HTTP    (80/TCP)
+                                        └─ NTP     (123/UDP)
 ```
 
 ## Estructura de cada página
@@ -40,8 +40,6 @@ Todas las páginas siguen el mismo orden:
 2. **Despliegue y Configuración**
 3. **Aseguramiento Seguridad SELinux/Firewall**
 4. **Pruebas de Aceptación y Troubleshooting**
-
-
 
 ## Referencia
 
