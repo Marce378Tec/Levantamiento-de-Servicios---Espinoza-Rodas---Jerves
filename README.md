@@ -1,9 +1,9 @@
 # Práctica: Levantamiento de servicios
 
-**Asignatura:** Sistemas Operativos I (Linux) | NRC 4292 - TICS-00087
-**Docente:** Ing. Jonnathan F. Nivicela A.
-**Periodo académico:** Septiembre 2026 - Febrero 2027
-**Laboratorio:** C-007, Campus Balzay
+**Asignatura:** Sistemas Operativos I (Linux) | NRC 4292 - TICS-00087  
+**Docente:** Ing. Jonnathan F. Nivicela A.  
+**Periodo académico:** Septiembre 2026 - Febrero 2027  
+**Laboratorio:** C-007, Campus Balzay  
 **Estudiantes:** Carlos Jerves y Marcelino Espinoza
 
 ---
@@ -23,8 +23,14 @@ Este repositorio es un **Runbook técnico**: documenta cómo se despliegan, se a
 
 ## Topología general
 
-<img width="2172" height="724" alt="image" src="https://github.com/user-attachments/assets/39ec5761-292c-4f97-b953-391b62a747a6" />
-
+```
+                        Red Bridge
+[ Windows + MobaXterm ] ------------> [ CentOS Stream ]
+   (cliente)                            ├─ SSH     (22/TCP)
+                                        ├─ HTTP    (80/TCP)
+                                        ├─ FTP     (20-21/TCP)
+                                        └─ NTP     (123/UDP)
+```
 
 ## Estructura de cada página
 
@@ -34,6 +40,10 @@ Todas las páginas siguen el mismo orden:
 2. **Despliegue y Configuración**
 3. **Aseguramiento Seguridad SELinux/Firewall**
 4. **Pruebas de Aceptación y Troubleshooting**
+
+## Referencia
+
+[1] J. V. Hidalgo Guijarro, G. G. Arcos Ponce y J. A. Naranjo Cedeño, *Configuración y administración avanzada sobre el Sistema Operativo CentOS 7.0*. Universidad Politécnica Estatal del Carchi, 2022. doi: 10.32645/9789942914804.
 
 ## Referencia
 
