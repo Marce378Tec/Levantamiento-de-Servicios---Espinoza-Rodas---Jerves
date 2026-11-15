@@ -134,6 +134,7 @@ Verifica que `ntp` aparezca en la lista de servicios.
 | 8 | Hora igual en ambos equipos | Comparar la hora de Windows con `date` en CentOS | La hora coincide |
 
 > 📸 **Evidencia:**
+
 >  <img width="442" height="475" alt="image" src="https://github.com/user-attachments/assets/29b711a4-4511-4f2f-8639-c51b1a557c7e" />
 
 
