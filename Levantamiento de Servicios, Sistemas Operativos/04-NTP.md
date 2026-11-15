@@ -1,4 +1,4 @@
-# 02-NTP: Sincronización horaria con Chrony
+# 04-NTP: Sincronización horaria con Chrony
 
 ## 01 Arquitectura y Requisitos
 
